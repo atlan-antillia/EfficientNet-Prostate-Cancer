@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 efficientnetv2-b0/
-
+projects/Prostate-Cancer/Prostate_Images/
+projects/Prostate-Cancer/Resampled_Prostate_Images/

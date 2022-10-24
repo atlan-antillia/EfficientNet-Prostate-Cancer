@@ -1,4 +1,4 @@
-<h2>EfficientNet-Prostate-Cancer (Updated: 2022/10/19)</h2>
+<h2>EfficientNet-Prostate-Cancer (Updated: 2022/10/24)</h2>
 <a href="#1">1 EfficientNetV2 Prostate Cancer Classification </a><br>
 <a href="#1.1">1.1 Clone repository</a><br>
 <a href="#1.2">1.2 Prepare Prostate-Cancer dataset</a><br>
@@ -264,7 +264,7 @@ Please run the following bat file to infer the breast cancer in test images by t
 ./2_inference.bat
 </pre>
 <pre>
-rem 2_inference.bat
+rem 2_inference.bat: modified eval_image_size to be 224
 python ../../EfficientNetV2Inferencer.py ^
   --model_name=efficientnetv2-b0  ^
   --model_dir=./models ^
@@ -272,7 +272,7 @@ python ../../EfficientNetV2Inferencer.py ^
   --trainable_layers_ratio=0.4 ^
   --dropout_rate=0.2 ^
   --image_path=./test/*.jpeg ^
-  --eval_image_size=480 ^
+  --eval_image_size=224 ^
   --label_map=./label_map.txt ^
   --mixed_precision=True ^
   --infer_dir=./inference ^
@@ -303,11 +303,11 @@ This inference command will generate <a href="./projects/Prostate-Cancer/inferen
 <br>
 <br>
 Inference console output:<br>
-<img src="./asset/Prostate_Cancer_infer_at_epoch_25_1019.png" width="740" height="auto"><br>
+<img src="./asset/Prostate_Cancer_infer_at_epoch_25_1024.png" width="740" height="auto"><br>
 <br>
 
 Inference result (inference.csv):<br>
-<img src="./asset/Prostate_Cancer_inference_at_epoch_25_1019.png" width="740" height="auto"><br>
+<img src="./asset/Prostate_Cancer_inference_at_epoch_25_1024.png" width="740" height="auto"><br>
 <br>
 <h2>
 <a id="6">6 Evaluation</a>
