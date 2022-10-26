@@ -1,0 +1,10 @@
+
+This image dataset used here has been taken from the following website:
+https://github.com/MicheleDamian/prostate-gleason-dataset
+
+Prostate Gleason Dataset is an image database of prostate cancer biopsies derived from the PANDA dataset. The database consists of about 70K patches of size 256x256 pixels extracted from the PANDA's biopsies with overlap. The patches are grouped in 4 classes depending on their Gleason grade:
+
+Class 0: Stroma and Gleason 0
+Class 1: Gleason 3
+Class 2: Gleason 4
+Class 3: Gleason 5

@@ -1,4 +1,4 @@
-<h2>EfficientNet-Prostate-Cancer (Updated: 2022/10/24)</h2>
+<h2>EfficientNet-Prostate-Cancer (Updated: 2022/10/26)</h2>
 <a href="#1">1 EfficientNetV2 Prostate Cancer Classification </a><br>
 <a href="#1.1">1.1 Clone repository</a><br>
 <a href="#1.2">1.2 Prepare Prostate-Cancer dataset</a><br>
@@ -15,6 +15,11 @@
 <a href="#6">6 Evaluation</a><br>
 <a href="#6.1">6.1 Evaluation script</a><br>
 <a href="#6.2">6.2 Evaluation result</a><br>
+<a href="#7">7 Improve Classification Accuracy</a><br>
+<a href="#7.1">7.1 Resampled_Prostate_Images</a><br>
+<a href="#7.2">7.2 Train</a><br>
+<a href="#7.3">7.3 Inference</a><br>
+<a href="#7.4">7.4 Evaluation</a><br>
 
 <h2>
 <a id="1">1 EfficientNetV2 Prostate Cancer Classification</a>
@@ -356,8 +361,92 @@ Classification report:<br>
 Confusion matrix:<br>
 <img src="./projects/Prostate-Cancer/evaluation/confusion_matrix.png" width="740" height="auto"><br>
 
+<h2>
+<a id="7">7 Improve Classificaiton Accuracy</a>
+</h2>
+<h3>
+<a id="7.1">7.1 Resampled_Prostate_Images</a>
+</h3>
+We will try to improve classification accuray by training our Prostate-Cancer FineTuninig Model with
+a better dataset.<br>
+In order to get a better balanced dataset than the original Prostate_Images, we have created <b>Resampled_Prostate_Images</b>
+from the dataset <b>Prostate_Images/train</b>
+by using a resampling tool <a href="https://github.com/martian-antillia/ImageDatasetResampler">ImageDatasetResampler</a>. 
+<br>
+The distribution of images of the Resampled_Prostate_Images is the following:<br>
+<img src="./projects/Resampled_Prostate-Cancer/_Resampled_Prostate_Images_.png" width="640" height="auto"><br>
+You can down load the resampled dataset from the following link on google-drive.<br>
+<a href="https://drive.google.com/file/d/1n3tzWXT8yyKjx6V_e5ZZ_geDPZvr99wA/view?usp=sharing">Resampled_Prostate_Images.zip (1.41GB)</a><br>
+Please expand the downloaded zip file and put it under <b>,/projects/Resampled_Prostate-Cancer</b> folder.<br>
+<br>
+Resampled_Prostate_Cancer
+<pre>
+├─asset
+├─efficientnetv2-b0
+└─projects
+    ├─Prostate-Cancer
+    │  ├─eval
+    │  ├─evaluation
+    │  ├─inference
+    │  ├─models
+    │  └─test
+    └─Resampled_Prostate-Cancer
+        ├─asset
+        ├─eval
+        ├─evaluation
+        ├─inference
+        ├─models
+        ├─Resampled_Prostate_Images
+        │  ├─test
+        │  │  ├─0
+        │  │  ├─1
+        │  │  ├─2
+        │  │  └─3
+        │  └─train
+        │      ├─0
+        │      ├─1
+        │      ├─2
+        │      └─3
+        └─test
+</pre>
+<br>
+Please be careful that the LICENCE of the new resampled dataset is the same as the <a href="https://github.com/MicheleDamian/prostate-gleason-dataset/blob/master/LICENSE.md">orginal dataset LICENSE</a>.<br>
+<b>
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+</b>
+<br>
+<h3>  
+<a id="7.2">7.2 Train</a>
+</h3>
+Please run <b>1_train.bat</b> under Resampled_Prostate_Images folder, then you get the following results.<br>
+<a href="./projects/Resampled_Prostate-Cancer/eval/train_accuracies.csv">Train accuracies</a>:<br>
+<img src="./projects/Resampled_Prostate-Cancer/eval/train_accuracies.png" width="640" height="auto"><br>
+<a href="./projects/Resampled_Prostate-Cancer/eval/train_losses.csv">Train losses:<br>
+<img src="./projects/Resampled_Prostate-Cancer/eval/train_losses.png" width="640" height="auto"><br>
+
+<h3>  
+<a id="7.3">7.3 Inference</a>
+</h3>
+Pleaes run <b>2_inference.bat</b> under Resampled_Prostate_Images folder, then you get the following results.<br>
+
+<a href="./projects/Resampled_Prostate-Cancer/inference/inference.csv">Inference</a><br>
+<img src="./projects/Resampled_Prostate-Cancer/asset/inference_epoch_24_1026.png" width="740" height="auto"><br>
 
 <br>
+<h3>  
+<a id="7.4">7.4 Evaluation</a>
+</h3>
+Please run <b>2_evaluate.bat</b> under Resampled_Prostate_Images folder, then you get the following results.<br>
+In this case, the classification precision, recall and f1-score are slightly improved than that of the original non-resampled dataset.<br>
+<a href ="./projects/Resampled_Prostate-Cancer/evaluation/classification_report.csv">Classification Report:</a><br>
+<img src="./projects/Resampled_Prostate-Cancer/asset/classification_report_epoch_24_1026.png" width="740" height="auto"><br>
+<br>
+Confusion Matrix:<br>
+<img src="./projects/Resampled_Prostate-Cancer/evaluation/confusion_matrix.png" width="740" height="auto"><br>
+<br>
+
+<hr>
+
 <h3>
 References
 </h3>
