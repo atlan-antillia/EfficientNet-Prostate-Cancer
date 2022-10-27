@@ -455,3 +455,20 @@ References
 https://github.com/MicheleDamian/prostate-gleason-dataset<br><br>
 </pre>
 
+<b>2. Prostate Cancer Detection using Deep Convolutional Neural Networks</b><br>
+Sunghwan Yoo, Isha Gujrathi, Masoom A. Haider & Farzad Khalvati<br>
+<pre>
+https://www.nature.com/articles/s41598-019-55972-4
+</pre>
+
+<b>3. Evolution-based Fine-tuning of CNNs for Prostate Cancer Detection</b><br>
+Khashayar Namdar, Isha Gujrathi, Masoom A. Haider, Farzad Khalvati<br>
+<pre>
+https://arxiv.org/pdf/1911.01477.pdf
+</pre>
+
+<b>4. A Review on Prostate Cancer Detection using CNN</b><br>
+Merlyn Koonamparampath1, Raj Shah, Mahipal Sundvesha, Meena Ugale<br>
+<pre>
+https://www.academia.edu/74053872/A_Review_on_Prostate_Cancer_Detection_using_CNN?email_work_card=view-paper
+</pre>
