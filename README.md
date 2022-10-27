@@ -452,7 +452,7 @@ References
 </h3>
 <b>1. Prostate Gleason Dataset</b><br>
 <pre>
-https://github.com/MicheleDamian/prostate-gleason-dataset<br><br>
+https://github.com/MicheleDamian/prostate-gleason-dataset
 </pre>
 
 <b>2. Prostate Cancer Detection using Deep Convolutional Neural Networks</b><br>
